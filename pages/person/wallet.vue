@@ -1,0 +1,1070 @@
+<style lang='less' scoped>
+  @import "../../static/styles/color";
+  @import "../../static/styles/person";
+  @import "../../static/styles/table";
+
+  .balance_tip {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+
+  .person-block {
+    padding-bottom: 16px;
+  }
+
+  .balance_info {
+    font-size: 14px;
+    flex: 1;
+  }
+
+  .balance_info:first-child {
+    min-width: 485px;
+  }
+
+  .balance_info:first-child {
+    border-right: 1px solid rgba(133, 131, 172, 0.2);
+  }
+
+  .balance_info .btc {
+    color: @cl_buy;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .person-block .person-block_info.manage {
+    padding-left: 40px;
+  }
+
+  .manage.balance_info .btc {
+    font-size: 18px;
+  }
+
+  .manage.balance_info .cny {
+    font-size: 14px;
+    color: #333;
+    font-weight: normal;
+  }
+
+  .manage.balance_info .coin {
+    font-size: 12px;
+  }
+
+  .balance_info .cny {
+    color: @cl_link;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .balance_info .br {
+    margin: 0 20px;
+    border-right: 1px solid rgba(133, 131, 172, 0.2);
+    display: inline-block;
+    height: 20px;
+  }
+
+  .balance_info_title {
+    line-height: 36px;
+    margin-bottom: 8px;
+  }
+
+  .balance_info_num {
+    padding: 4px 0;
+  }
+
+  .balance_info_address_button {
+    color: @cl_link;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+
+  .balance-block {
+    margin-top: 10px;
+    background-color: @cl_fff;
+  }
+
+  .balance-block-title {
+    padding: 18px 20px 8px 20px;
+  }
+
+  .balance-block-title .title_tip {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .balance-block-search {
+    margin-left: 20px;
+    font-size: 14px;
+    width: 220px;
+    display: inline-flex;
+    flex-direction: row;
+    height: 30px;
+    line-height: 28px;
+  }
+
+  .balance-block-search input {
+    border: 1px solid #DDDDDD;
+    width: 100%;
+    padding: 5px 10px;
+  }
+
+  .balance-block-search input.ipt_hover:hover {
+    border-right: 0 !important;
+  }
+
+  .balance-block-search .search-tip {
+    width: 60px;
+    background-color: @cl_link;
+    color: @cl_fff;
+    border: 1px solid @cl_link;
+    text-align: center;
+  }
+
+  .balance-block-search .search-tip::placeholder {
+    color: @cl_bbb;
+  }
+
+  .hex_table_body .handle {
+    color: @cl_link;
+    font-size: 12px;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+
+  .hex_table_body .handle_no {
+    color: @cl_c9c;
+    font-size: 12px;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+
+  .hex_table_body {
+    line-height: 40px;
+  }
+
+  .hex_table_action {
+    position: relative;
+  }
+
+  .hex_table_action .deal_buttons {
+    position: absolute;
+    color: @cl_link;
+    font-size: 12px;
+    padding: 5px 0;
+    top: 35px;
+    right: -5px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: #fff;
+  }
+
+  .hex_table_action span.deal {
+    line-height: 44px;
+    height: 44px;
+    display: inline-block;
+  }
+
+  .hex_table_action .deal_buttons li {
+    line-height: 32px;
+    text-align: left;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+
+  .hex_table_action .deal_buttons li:hover {
+    background-color: @cl_f0e;
+  }
+
+  .hex_table_symble_icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .hex_table_action .deal_buttons li.sanj {
+    top: -6px;
+    right: 12px;
+    background: white;
+    padding: 0;
+    border-bottom-right-radius: 16px;
+    border: 1px solid #f3f3f3;
+    border-bottom: 0 none;
+    border-right: 0 none;
+  }
+
+  .coinNane {
+    position: relative;
+    top: 1px;
+    padding-left: 5px;
+  }
+
+  .hex_table_body:last-child {
+    border-bottom: none;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .manage-icon {
+    padding: 0px 4px;
+    background: @cl_link;
+    color: white;
+    font-size: 10px;
+    border-radius: 2px;
+  }
+
+  /*11111111111*/
+  .trade-top_tip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .trade-top_tip.active > i {
+    background-image: url("../../static/images/trade/tip-active.svg");
+  }
+
+  .trade-top_tip > i {
+    display: inline-block;
+    width: 16px;
+    height: 32px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: 13px 13px;
+    background-position: center;
+    background-image: url("../../static/images/trade/tip.svg");
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+  }
+
+  .trade-top_tip .tip_modal {
+    padding: 10px;
+    width: 320px;
+    line-height: 18px;
+    font-size: 12px;
+    border-radius: 4px;
+    background: #21283e;
+    box-shadow: 0 2px 4px 0 rgba(100, 107, 140, 0.3);
+    opacity: 0.9;
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    z-index: 2001;
+    .row {
+      padding-left: 10px;
+      position: relative;
+      color: #dee0e6;
+      dt {
+        position: absolute;
+        left: 0;
+        top: 7px;
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background-color: #9094a4;
+        border-radius: 200px;
+      }
+    }
+  }
+
+  .trade-top_tip.freeze-coin-hx {
+    position: absolute;
+    top: 2px;
+  }
+
+  .trade-top_tip .tip_modal:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5.5px 5.5px 7px 17.5px;
+    border-color: #ff000008 #21283e #003eff00 #00ff2b00;
+    position: absolute;
+    top: 13px;
+    left: -22px;
+  }
+
+  .trade-top_tip.freeze-coin-hx .tip_modal {
+    display: none;
+    top: 0;
+  }
+
+  .trade-top_tip.freeze-coin-hx:hover .tip_modal {
+    display: block;
+  }
+
+  /*usdt充值提现*/
+  .usdt-recharge {
+    padding: 20px;
+    li {
+      cursor: pointer;
+      float: left;
+      &:nth-of-type(2) {
+        margin: 0 20px;
+      }
+      &:nth-of-type(4) {
+        margin: 0 20px;
+      }
+      &.active span {
+        background-color: #14a2a5;
+        color: #fff;
+      }
+      span {
+        font-size: 12px;
+        padding: 2px 6px;
+        background-color: #f0f0f0;
+        color: #aaa;
+      }
+    }
+  }
+  .usdt-recharge li span.add_btn{
+    background: #14a2a5 ;
+    color: #ffffff !important;
+    border: none;
+  }
+  .pos_re{
+    position: relative;
+  }
+</style>
+<template>
+  <div class="balance">
+    <div class="person-block">
+      <span class="person-block_icon wallet"></span>
+      <div class="flex">
+        <div class="person-block_info balance_info">
+          <p class="balance_info_title">
+            <span class="balance_tip">{{$t('wallet.totalAssets')}}</span>
+            <span>
+            <span class="person-block_title_tip">
+              <span>{{$t('wallet.todayMention')}}：</span>
+              <span>{{global_get_tofixed($userinfo.withdrawlimtperday)}} BTC</span>
+            </span>
+          </span>
+          </p>
+          <div class="balance_info_num clearfix">
+          <span class="left">
+            <span class="btc">≈{{totalAssets}}</span>
+            <span>BTC</span>
+            <span class="br"></span>
+            <span class="cny">{{allTransition}}</span>
+            <span>{{$store.getters.get_client_exchange_rate_name.name}}</span>
+          </span>
+          </div>
+        </div>
+        <!--理财资产-->
+        <!-- <div class="person-block_info balance_info manage">
+          <p class="balance_info_title">
+            <span class="balance_tip">{{$t('manage.Cooperation')}}</span>
+            <span>
+          </span>
+          </p>
+          <div class="balance_info_num clearfix">
+          <span class="left">
+            <span class="btc">≈{{managetotalAssets}}</span>
+            <span class="coin">BTC</span>
+            <span class="br"></span>
+            <span class="cny">{{manageallTransition}}</span>
+            <span>{{$store.getters.get_client_exchange_rate_name.name}}</span>
+          </span>
+            <nuxt-link
+              to="/person/address/mention-site"
+              tag="span" class="balance_info_address_button right">{{$t('wallet.addressManage')}}
+            </nuxt-link>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="balance-block">
+      <div class="balance-block-title clearfix">
+        <span class="title_tip left">{{$t('wallet.coin')}}</span>
+        <div class="right">
+          <span @click="hideDriblet">
+            <el-checkbox v-model="checked">
+              <span class="label-tip">{{$t('wallet.hideCoin')}}</span>
+            </el-checkbox>
+          </span>
+          <div class="balance-block-search">
+            <input type="text"
+                   :placeholder="$t('wallet.searchCion')"
+                   class='ipt_hover'
+                   v-model="search"
+                   @keyup.enter="searchCoin">
+            <span class="search-tip">{{$t('home.searchButton')}}</span>
+          </div>
+        </div>
+      </div>
+      <table class="hex_table">
+        <thead class="hex_table_header padding br">
+        <tr>
+          <th class="lt">
+            <div>{{$t('wallet.cionShortName')}}</div>
+          </th>
+          <th class="rt">
+            <div>{{$t('wallet.available')}}</div>
+          </th>
+          <th class="rt">
+            <div>{{$t('wallet.freeze')}}</div>
+          </th>
+<!--          <th class="rt">{{$t('manage.Cooperative')}}</th>-->
+<!--          <th class="rt">{{$t('wallet.Leveraged')}}</th>-->
+<!--          <th class="rt">{{$t('wallet.contract')}}</th>-->
+          <th class="rt">{{$t('wallet.generalAssets')}}</th>
+          <th class="rt">
+            <div>{{$store.getters.get_client_exchange_rate_name.name}}{{$t('wallet.walletspan1')}}</div>
+          </th>
+          <th class="rt">
+            <div>{{$t('home.tradeOperation')}}</div>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <template v-for="(m,i) in searchList">
+          <tr class="hex_table_body padding"
+              :class="{'active':isVisibleDetailRow(m.currency.id)}"
+              :key="`body-${m.currency.id}`">
+            <td>
+              <div>
+                <img class="hex_table_symble_icon"
+                     :src="m.currency.icon"
+                     v-if="m.currency.icon"
+                     alt="">
+                <span class="coinNane">{{(m.currency.fullname).toUpperCase()}}</span>
+                <!--只有cnyt和hx有提示-->
+                <div
+                  v-if="m.currency.fullname=='CNYT'||m.currency.fullname=='HX'"
+                  @mouseenter="showManage(i,true)"
+                  @mouseleave="showManage(i,false)"
+                  :class="{'active':showManage,'coin-hx':m.currency.fullname=='HX'}"
+                  class="trade-top_tip ">
+                  <i></i>
+                  <dl
+                    v-show="isShowManage(i)"
+                    class="tip_modal">
+                    <div
+                      class="row">
+                      <dd v-if="m.currency.fullname=='CNYT'">
+                        {{$t('manage.third-party')}}
+                      </dd>
+                      <dd v-else>
+                        {{$t('manage.launched')}}
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+                <div class="inline-black">
+                  <i></i>
+                  <span class="manage-icon" v-if="m.currency.isfinancing">{{$t('manage.Cooperation')}}</span>
+                </div>
+              </div>
+            </td>
+            <td class="rt">
+              <div>{{global_get_tofixed(m.canuseamount, global_get_decimal(m.currency.currencyname).a)}}</div>
+            </td>
+            <td class="rt por">
+              <div>
+                {{global_get_tofixed(m.bbfrozen, global_get_decimal(m.currency.currencyname).a)}}/{{global_get_tofixed(m.c2cfrozen, global_get_decimal(m.currency.currencyname).a)}}
+              </div>
+              <div
+                v-if="m.currency.fullname=='HX'"
+                :class="{'freeze-coin-hx':m.currency.fullname=='HX'}"
+                class="trade-top_tip active">
+                <i></i>
+                <dl
+                  class="tip_modal">
+                  <div
+                    class="row">
+                    <dd class="lt">
+                      {{$t('manage.fNum')}}
+                    </dd>
+                    <dd class="lt">
+                      {{$t('manage.sNum')}}
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </td>
+<!--            <td class="rt">{{global_get_tofixed(m.financingamount, global_get_decimal(m.currency.currencyname).a)}}</td>-->
+<!--            <td class="rt">{{global_get_tofixed(m.mortgageamount, global_get_decimal(m.currency.currencyname).a)}}</td>-->
+<!--            <td class="rt">{{global_get_tofixed(m.contractamount, global_get_decimal(m.currency.currencyname).a)}}</td>-->
+            <td class="rt">{{global_get_tofixed(m.totalamount, global_get_decimal(m.currency.currencyname).a)}}</td>
+            <td class="rt">
+              <div>
+                {{$store.getters.get_client_exchange_rate_name.mark}}
+                {{$store.getters.get_client_exchange_rate(m.currency.currencyname, m.totalamount)}}
+              </div>
+            </td>
+            <td class="rt size0">
+              <div class="hex_table_action">
+                <span class="handle" v-if="m.currency.isfinancing"
+                      @click="goFinancing(m.currency.id)">{{$t('manage.Cooperation')}}</span>
+                <!--充值-->
+                <span class="handle" v-if="m.currency.currencyname=='cnyt'" @click="legalDeal(-1)">{{$t('legalDeal.Buy')}}</span>
+                <span class="handle_no" v-else-if="!m.currency.iscandeposit">{{$t('wallet.recharge')}}</span>
+                <span class="handle" v-else @click="showDetailRow(m,'chargeMoney')">{{$t('wallet.recharge')}}</span>
+                <!--提现-->
+                <span class="handle" v-if="m.currency.currencyname=='cnyt'" @click="legalDeal(1)">{{$t('legalDeal.Sell')}}</span>
+                <span class="handle_no" v-else-if="!m.currency.iscanwithdraw">{{$t('wallet.withdraw')}}</span>
+                <span class="handle" v-else @click="showDetailRow(m,'mentionMoney')">{{$t('wallet.withdraw')}}</span>
+
+                <span class="handle_no" v-if="m.listsymble.length<=0">{{$t('wallet.deal')}}</span>
+                <span class="handle deal "
+                      v-else
+                      @mouseenter="showDeal(i,true)"
+                      @mouseleave="showDeal(i,false)"
+                >{{$t('wallet.deal')}}</span>
+
+                <ul class="deal_buttons "
+                    @mouseenter="showDeal(i,true)"
+                    @mouseleave="showDeal(i,false)"
+                    v-show="isShowDeal(i)">
+                  <li class="sanj" v-if="m.listsymble.length>0"></li>
+                  <li v-for="(symble,i) in m.listsymble"
+                      @click="toDeal(symble)"
+                      :key="i">
+                    {{symble.toUpperCase()}}
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+
+          <template v-if="isVisibleDetailRow(m.currency.id)">
+            <tr class="hex_table_row" :key="m.currency.id">
+              <td colspan="8" class="pos_re">
+                <!--充值-->
+                <ChargeMoney
+                  v-if="m.type == 'chargeMoney' && m.currency.currencyname.toUpperCase()!='USDT'&& m.currency.currencyname.toUpperCase()!='EUR'"
+                  :decimal="decimal"
+                  :currencyAll="m"></ChargeMoney>
+
+                <!--提现-->
+                <div class="pos_re" v-if="m.type == 'mentionMoney' && m.currency.currencyname.toUpperCase()=='USDT'">
+                  <ul class="usdt-recharge">
+
+                    <li @click="usdtMentionMode('Withdrawal')" :class="{'active':withdrawType1 === 'Withdrawal'}">
+                      <span>{{$t('wallet.withdrawOMNI')}}</span></li>
+                    <!-- <li v-if="have_upi" @click="jumpCardLoad()" :class="{'active':withdrawType1 === 'cardLoad'}">
+                      <span>{{$t('wallet.loadToCard')}}</span></li> -->
+<!--                    <li v-if="!have_upi" @click="usdtMentionMode('cardLoad')" :class="{'active':withdrawType1 === 'cardLoad'}">-->
+<!--                     <span>{{$t('wallet.loadToCard')}}</span></li>-->
+<!--                    <li @click="usdtMentionMode('withdrawalImove')" :class="{'active':withdrawType1 === 'withdrawalImove'}">-->
+<!--                      <span>{{$t('wallet.withdrawalImove')}}</span></li>-->
+                  </ul>
+                <MentionMoney
+                  v-show="m.type == 'mentionMoney' && m.currency.currencyname.toUpperCase()=='USDT'"
+                  @wallet:getInfo="getWalletInfo"
+                  :currencyAll="m"
+                  :decimal="decimal"
+                  :withdrawType1="withdrawType1"
+                  :maxmount="$userinfo.withdrawlimtperday"></MentionMoney>
+                </div>
+                <!--EUR 提现-->
+                <div class="pos_re" v-if="m.type == 'mentionMoney' && m.currency.currencyname.toUpperCase()=='EUR'">
+                  <ul class="usdt-recharge">
+                    <li @click="usdtMentionMode('eur_imove')" :class="{'active':withdrawType1 === 'eur_imove'}">
+                      <span>{{$t('wallet.withdrawalImove')}}</span></li>
+                  </ul>
+                  <EURMentionMoney
+                    v-show="m.type == 'mentionMoney' && m.currency.currencyname.toUpperCase()=='EUR'"
+                    @wallet:getInfo="getWalletInfo"
+                    :currencyAll="m"
+                    :decimal="decimal"
+                    :withdrawType1="withdrawType1"
+                    :maxmount="$userinfo.withdrawlimtperday"></EURMentionMoney>
+                </div>
+                <!--USDT 提现-->
+                <MentionMoney
+                  v-if="m.type == 'mentionMoney' && m.currency.currencyname.toUpperCase()!='USDT' && m.currency.currencyname.toUpperCase()!='EUR'"
+                  @wallet:getInfo="getWalletInfo"
+                  :currencyAll="m"
+                  :decimal="decimal"
+                  :maxmount="$userinfo.withdrawlimtperday"></MentionMoney>
+                <!--USDT充值  OMNI & ERC20-->
+                <div class="pos_re" v-if="m.type == 'chargeMoney' && m.currency.currencyname.toUpperCase()=='USDT'">
+                  <ul class="usdt-recharge">
+                    <li @click="usdtRechargeMode('omni')" :class="{'active':chooseOmniOrErc20=='omni'}">
+                      <span>{{$t('wallet.omni')}} </span></li>
+                    <li @click="usdtRechargeMode('erc20')" :class="{'active':chooseOmniOrErc20=='erc20'}">
+                      <span>{{$t('wallet.erc20')}}</span></li>
+<!--                    <li v-if="$userinfo.securitylevel < 2" @click="jumpAuthentication()" :class="{'active':chooseOmniOrErc20=='Imove'}">-->
+<!--                      <span>{{$t('wallet.imove')}}</span></li>-->
+<!--                    <li v-else @click="usdtRechargeMode('Imove')" :class="{'active':chooseOmniOrErc20=='Imove'}">-->
+<!--                      <span>{{$t('wallet.imove')}}</span></li>-->
+<!--                    <li v-if="$userinfo.securitylevel < 2"  @click="jumpAuthentication()" :class="{'active':chooseOmniOrErc20=='Mastercard'}">-->
+<!--                      <span>{{$t('wallet.mastercard')}}</span></li>-->
+<!--                    <li v-else @click="usdtRechargeMode('Mastercard')" :class="{'active':chooseOmniOrErc20=='Mastercard'}">-->
+<!--                      <span>{{$t('wallet.mastercard')}}</span></li>-->
+<!--                    <li v-if="$userinfo.securitylevel < 2"  @click="jumpAuthentication()" :class="{'active':chooseOmniOrErc20=='upi'}">-->
+<!--                      <span>{{$t('wallet.loadToCard')}}</span></li>-->
+<!--                    <li v-else @click="usdtRechargeMode('upi')" :class="{'active':chooseOmniOrErc20=='upi'}">-->
+<!--                      <span>{{$t('wallet.loadToCard')}}</span></li>-->
+                  </ul>
+                  <!--USDT 充值-->
+                  <ChargeMoney
+                    v-if="chooseOmniOrErc20=='omni'"
+                    :decimal="decimal"
+                    :ethRechargeAddressForErc20="null"
+                    :currencyAll="m"
+                    :depositType1="chooseOmniOrErc20"></ChargeMoney>
+                  <ChargeMoney
+                    v-else-if="chooseOmniOrErc20=='imove'"
+                    :decimal="decimal"
+                    :depositType1="chooseOmniOrErc20"
+                    :currencyAll="m"></ChargeMoney>
+                  <ChargeMoney
+                    v-else-if="chooseOmniOrErc20=='Mastercard'"
+                    :decimal="decimal"
+                    :depositType1="chooseOmniOrErc20"
+                    :currencyAll="m"></ChargeMoney>
+                  <ChargeMoney
+                    v-else-if="chooseOmniOrErc20=='upi'"
+                    :decimal="decimal"
+                    :depositType1="chooseOmniOrErc20"
+                    :currencyAll="m"></ChargeMoney>
+                  <ChargeMoney
+                    v-else
+                    :decimal="decimal"
+                    :ethRechargeAddressForErc20="ethRechargeAddressForErc20"
+                    :currencyAll="m"
+                    :depositType1="chooseOmniOrErc20"></ChargeMoney>
+                </div>
+
+                <!--EUR 充值 -->
+                <div class="pos_re" v-if="m.type == 'chargeMoney' && m.currency.currencyname.toUpperCase()=='EUR'">
+                  <ul class="usdt-recharge">
+                      <!-- <li @click="usdtRechargeMode('eur_other')" :class="{'active':chooseOmniOrErc20=='eur_other'}">
+                      <span>other</span></li> -->
+                      <li @click="usdtRechargeMode('eur_imove')" :class="{'active':chooseOmniOrErc20=='eur_imove'}">
+                      <span>{{$t('wallet.imove')}}</span></li>
+                      <li v-if="$userinfo.securitylevel < 2"  @click="jumpAuthentication()" :class="{'active':chooseOmniOrErc20=='Mastercard'}">
+                      <span>{{$t('wallet.mastercard')}}</span></li>
+                      <li v-else @click="usdtRechargeMode('Mastercard')" :class="{'active':chooseOmniOrErc20=='Mastercard'}">
+                        <span>{{$t('wallet.mastercard')}}</span></li>
+                      <li v-if="$userinfo.securitylevel < 2"  @click="jumpAuthentication()" :class="{'active':chooseOmniOrErc20=='upi'}">
+                        <span>{{$t('wallet.loadToCard')}}</span></li>
+                      <li v-else @click="usdtRechargeMode('upi')" :class="{'active':chooseOmniOrErc20=='upi'}">
+                        <span>{{$t('wallet.loadToCard')}}</span></li>
+                  </ul>
+                  <!--EUR 充值-->
+                  <EURChargeMoney
+                    v-if="chooseOmniOrErc20=='eur_imove'"
+                    :decimal="decimal"
+                    :depositType1="chooseOmniOrErc20"
+                    :currencyAll="m"></EURChargeMoney>
+                  <EURChargeMoney
+                    v-else-if="chooseOmniOrErc20=='Mastercard'"
+                    :decimal="decimal"
+                    :depositType1="chooseOmniOrErc20"
+                    :currencyAll="m"></EURChargeMoney>
+                  <EURChargeMoney
+                    v-else-if="chooseOmniOrErc20=='upi'"
+                    :decimal="decimal"
+                    :depositType1="chooseOmniOrErc20"
+                    :currencyAll="m"></EURChargeMoney>
+                  <EURChargeMoney
+                    v-else
+                    :decimal="decimal"
+                    :depositType1="chooseOmniOrErc20"
+                    :currencyAll="m"></EURChargeMoney>
+                </div>
+              </td>
+            </tr>
+          </template>
+        </template>
+        </tbody>
+      </table>
+      <div v-if="!loading">
+        <div class="anonymous" v-if="foundData">
+          <div class="anonymous-pic">
+            <img src="~/static/images/user/anonymous.svg" alt="">
+          </div>
+          <p class="anonymous-tip">
+            {{$t('legalTrad.record')}}<span></span>
+          </p>
+        </div>
+      </div>
+      <div v-if="loading" class="loadingPic por" v-hex-loading="loading"></div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import ChargeMoney from '@/components/deal/charge-money'
+  import EURChargeMoney from '@/components/deal/eur-charge-money'
+  import FiatMoney from '@/components/deal/fiat-money'
+  import MentionMoney from '@/components/deal/mention-money'
+  import MentionFiatMoney from '@/components/deal/mention-fiat-money'
+  import EURMentionMoney from '@/components/deal/eur-mention-money'
+  import Wallet from '@/components/deal/wallet'
+  import more from '@/components/public/more'
+  import Loading from '@/components/public/page-loading'
+
+  export default {
+    name: 'articles',
+    components: {
+      Wallet,
+      ChargeMoney,
+      MentionMoney,
+      MentionFiatMoney,
+      EURChargeMoney,
+      EURMentionMoney,
+      FiatMoney,
+      'hex-more': more
+    },
+    computed: {
+      totalAssets: function() {
+        const _this = this;
+        let allbtc = 0;
+        this.currencyData.forEach((item) => {
+          allbtc += this.$store.getters.get_btc_exchange_rate(item.currency.currencyname, item.totalamount)
+          allbtc += this.$store.getters.get_btc_exchange_rate(item.currency.currencyname, item.lockamount)
+        });
+        _this.decimal = this.global_get_decimal('btc');
+        return this.global_get_tofixed(allbtc, _this.decimal.a);
+      },
+      allTransition: function() {
+        let alltransition = this.$store.getters.get_client_exchange_rate('btc', this.totalAssets);
+        return alltransition;
+      },
+
+      managetotalAssets: function() {
+        const _this = this;
+        let allbtc = 0;
+        this.currencyData.forEach((item) => {
+          allbtc += this.$store.getters.get_btc_exchange_rate(item.currency.currencyname, item.financingamount)
+        });
+        return this.global_get_tofixed(allbtc, _this.decimal.a);
+      },
+      manageallTransition: function() {
+        let alltransition = this.$store.getters.get_client_exchange_rate('btc', this.managetotalAssets);
+        return alltransition;
+      },
+
+      searchList: function() {
+        const _this = this;
+        const _isCheck = this.checked;
+        const list = _this.currencyData;
+        const value = _this.search.toLowerCase().replace(/ /g, '');
+        let searchary = [];
+        if (value) {
+          const reg = new RegExp(value, 'gim');
+
+          list.map((item) => {
+            if ((item.currency.currencyname).match(reg)) {
+              searchary.push(item)
+            }
+          });
+          return _this.hideDriblet(searchary, _isCheck);
+        } else {
+          return _this.hideDriblet(list, _isCheck);
+        }
+      }
+    },
+    data() {
+      return {
+        List: [],
+        tipstate: false,
+        decimal: {},
+        foundData: false,
+        loading: true,
+        chargeMoney: 'chargeMoney',
+        mentionMoney: 'mentionMoney',
+        visibleDetailRows: [],
+        checked: false,
+        currencyData: [],
+        currencyStatus: true,
+        pageindex: 0,
+        pagesize: 10,
+        search: "",
+        dribletCion: [],
+        searchResult: [],
+        dealtimer: {},
+        managetimer: {},
+        chooseOmniOrErc20: 'omni',
+        ethRechargeAddressForErc20: '',
+        userassetsfirst: true,
+        gofinancingloading: false,
+        depositType1: '',
+        withdrawType1: 'Withdrawal',
+        have_upi: true,
+        upi_card_number_f: '',
+      }
+    },
+    methods: {
+      jumpAuthentication(){
+        this.$store.commit('set_message', {type: 'error', text: this.$t('wallet.imoveAuthentication')});
+        this.errMsg = true;
+        setTimeout(() => {
+          this.$router.push('/person/authentication')
+        }, 2000);
+        return;
+      },
+      jumpCardLoad(){
+        this.$store.commit('set_message', {type: 'error', text: this.$t('wallet.appCardLoad')});
+        this.errMsg = true;
+        // setTimeout(() => {
+        //   this.$router.push('/person/mycard')
+        // }, 2000);
+        return;
+      },
+      getfrozenamount(f, l) { //f:冻结量 c:可用量 l：锁定量
+        return this.$np.plus(f, l);
+      },
+      goFinancing(id) {
+        if (this.gofinancingloading) {
+          return
+        }
+        this.gofinancingloading = true
+        this.$store.dispatch('finance_product_search', {
+            status: 1,
+            currencyid: id,
+            type: null,
+            cyclestart: null,
+            cycleend: null,
+            pageindex: 1,
+            pagesize: 20
+          })
+          .then(({
+            data
+          }) => {
+            if (data && data.pagedata.length > 0) {
+              const d = data.pagedata.sort((itema, itemb) => {
+                return (new Date(itema.finishselltime)) - (new Date(itemb.finishselltime))
+              })
+              this.$router.push({
+                path: '/financial/' + d[0].id
+              })
+            } else {
+              this.$router.push({
+                name: 'financial-list',
+                query: {
+                  currencyid: id,
+                  status: 1
+                }
+              })
+            }
+            this.gofinancingloading = false
+          })
+          .catch(() => {
+            this.gofinancingloading = false
+          })
+      },
+      legalDeal(val) {
+        this.$router.push({
+          name: 'trade',
+          query: {
+            direction: val
+          }
+        })
+      },
+      hideDriblet(arr, isCheck) {
+        if (isCheck) {
+          let filterList = [];
+          arr.forEach((item) => {
+            if (this.$np.plus(item.frozenamount, item.lockamount, item.canuseamount) > 0) {
+              filterList.push(item)
+            }
+          })
+          filterList.length > 0 ? this.foundData = false : this.foundData = true;
+          return filterList;
+        } else {
+          arr.length > 0 ? this.foundData = false : this.foundData = true;
+          return arr;
+        }
+      },
+      searchCoin(e) {
+        this.search = e.target.value;
+      },
+      getSymbleImg(m) {
+        if (!m) return;
+        return m.currency.icon
+      },
+      getSymbleName(m) {
+        if (!m) return;
+        return m.currency.currencyname.toUpperCase();
+      },
+
+      toDeal(s) {
+        s = s.replace('/', '_');
+        this.$router.push({
+          name: 'deal-id',
+          params: {
+            id: s
+          }
+        })
+      },
+      isVisibleDetailRow(rowid) {
+        return this.visibleDetailRows.indexOf(rowid) >= 0
+      },
+      showDeal(i, m) {
+        this.dealtimer[i] && clearTimeout(this.dealtimer[i]);
+        if (!m) {
+          this.dealtimer[i] = setTimeout(() => {
+            this.currencyData[i].showDeal = m;
+            this.$forceUpdate()
+          }, 300)
+        } else {
+          this.currencyData[i].showDeal = m;
+          this.$forceUpdate()
+        }
+      },
+      showManage(i, m) {
+        this.managetimer[i] && clearTimeout(this.managetimer[i]);
+        if (!m) {
+          this.managetimer[i] = setTimeout(() => {
+            this.currencyData[i].showManage = m;
+            this.$forceUpdate()
+          }, 300)
+        } else {
+          this.currencyData[i].showManage = m;
+          this.$forceUpdate()
+        }
+      },
+      isShowDeal(i) {
+        return !!this.currencyData[i].showDeal
+      },
+      isShowManage(i) {
+        return !!this.currencyData[i].showManage
+      },
+      showDetailRow(row, type) {
+
+        if (this.$userinfo.securitylevel < 1) {
+          this.$store.commit('set_message', {
+            type: 'error',
+            text: this.$t('card.kycInfo')
+          });
+          return this.$router.push('/person/authentication')
+        }
+        if (type == 'mentionMoney' && (!this.$userinfo.isopenpaypassword)) {
+          this.$store.commit('set_message', {
+            type: 'error',
+            text: this.$t('wallet.openPayPassword')
+          });
+          return this.$router.push('/person/security')
+        }
+
+        if (!this.isVisibleDetailRow(row.currency.id)) {
+          this.visibleDetailRows = [];
+          this.visibleDetailRows.push(row.currency.id)
+        } else {
+          if (row.type == type) {
+            this.visibleDetailRows.splice(this.visibleDetailRows.indexOf(row.currency.id), 1);
+          }
+        }
+        row.type = type;
+        // update  出入金默认值
+        switch (this.getSymbleName(row)) {
+          case 'USDT':
+            this.chooseOmniOrErc20 = 'omni'
+            break;
+          case 'EUR':
+            this.chooseOmniOrErc20 = 'eur_imove'
+            this.withdrawType1 = 'eur_imove'
+            break;
+          default:
+            break;
+        }
+
+        this.$forceUpdate()
+      },
+      usdtRechargeMode(str) {
+        this.chooseOmniOrErc20 = str
+
+        if (this.chooseOmniOrErc20 === 'erc20') this.getEthRechargeAddress()
+      },
+      usdtMentionMode(str) {
+        this.withdrawType1 = str
+        console.log(this.withdrawType1)
+      },
+      getEthRechargeAddress() {//usdt recharge erc20 need eth`s address
+        for (let i of this.currencyData) {
+          if (i.currency.currencyname === 'ETH') {
+            this.ethRechargeAddressForErc20 = i.address
+            break
+          }
+        }
+      },
+      getWalletInfo() {
+        const _self = this;
+        this.currencyStatus = true;
+        this.loading = true;
+        _self.$store.dispatch('user_assets_get', {
+          assetstype: 1,
+          rows: 100
+        }).then(({
+          data
+        }) => {
+          if (data) {
+            this.currencyData = data;
+            /*是否是跳转过来的,展开充币、提币选项*/
+            let openTab;
+            let id;
+            if (this.$route.params.id) {
+              openTab = 'chargeMoney'
+              id = this.$route.params.id
+            } else if (this.$route.params.withdraw) {
+              openTab = 'mentionMoney'
+              id = this.$route.params.withdraw
+            }
+            // const id = this.$route.params.assetsid;
+            if (id) {
+              const active = data.find((item) => {
+                return item.currency.id == id;
+              })
+              this.showDetailRow(active, openTab)
+            }
+          }
+          this.currencyStatus = false;
+          this.loading = false;
+        })
+      },
+      getUpiCardNumber(){
+        this.loginInfo = this.$userinfo;
+        this.$store.dispatch("get_user_upi_card_info",
+            {
+                "uid": this.loginInfo.uid,
+                "key": this.loginInfo.secretkey,
+                "ip": this.loginInfo.lastloginip
+            }
+        ).then((res) => {
+            if(res.data != null && res.data.status == 4 && res.data.card_number != ''){
+              this.have_upi = false
+              this.upi_card_number_f = res.data.card_number
+            }
+        })
+      }
+    },
+    mounted() {
+      this.getWalletInfo();
+      this.getUpiCardNumber();
+    },
+    async fetch({
+      store,
+      params
+    }) {
+      /*获取腾讯 im sign*/
+      if (store.state.hex_uid.value) {
+        const tencentim_sign = await store.dispatch('trading_c2c_tencentim_sig_get')
+        const _sign = tencentim_sign.data ? tencentim_sign.data : ''
+        if (_sign) {
+          store.commit('set_server_tencentim_sign', _sign)
+        }
+
+        /*单日最大额度*/
+        const {
+          data
+        } = await store.dispatch('user_user_settings_get')
+        if (data) {
+          store.commit('set_user_allwithdrawlimtperday', data.withdrawlimtperday)
+        }
+      }
+    }
+  }
+</script>

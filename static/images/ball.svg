@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>产品丰富</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#8CD5FF" offset="0%"></stop>
+            <stop stop-color="#8CD5FF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#8CD5FF" offset="0%"></stop>
+            <stop stop-color="#8CD5FF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="1.首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-470.000000, -1413.000000)" id="产品丰富">
+            <g transform="translate(470.000000, 1413.000000)">
+                <rect id="矩形" fill="url(#linearGradient-1)" x="8" y="27" width="3" height="26"></rect>
+                <rect id="矩形" fill="url(#linearGradient-2)" x="27" y="7" width="26" height="3"></rect>
+                <rect id="矩形备份-6" fill="url(#linearGradient-2)" transform="translate(40.000000, 69.500000) scale(-1, 1) translate(-40.000000, -69.500000) " x="27" y="68" width="26" height="3"></rect>
+                <path d="M65,27 L65,24 L75,24 C75.5522847,24 76,23.5522847 76,23 L76,5 C76,4.44771525 75.5522847,4 75,4 L57,4 C56.4477153,4 56,4.44771525 56,5 L56,15 L53,15 L53,5 C53,2.790861 54.790861,1 57,1 L75,1 C77.209139,1 79,2.790861 79,5 L79,23 C79,25.209139 77.209139,27 75,27 L65,27 Z M15,27 L5,27 C2.790861,27 1,25.209139 1,23 L1,5 C1,2.790861 2.790861,1 5,1 L23,1 C25.209139,1 27,2.790861 27,5 L27,15 L24,15 L24,5 C24,4.44771525 23.5522847,4 23,4 L5,4 C4.44771525,4 4,4.44771525 4,5 L4,23 C4,23.5522847 4.44771525,24 5,24 L15,24 L15,27 Z M65,53 L75,53 C77.209139,53 79,54.790861 79,57 L79,75 C79,77.209139 77.209139,79 75,79 L57,79 C54.790861,79 53,77.209139 53,75 L53,65 L56,65 L56,75 C56,75.5522847 56.4477153,76 57,76 L75,76 C75.5522847,76 76,75.5522847 76,75 L76,57 C76,56.4477153 75.5522847,56 75,56 L65,56 L65,53 Z M15,53 L15,56 L5,56 C4.44771525,56 4,56.4477153 4,57 L4,75 C4,75.5522847 4.44771525,76 5,76 L23,76 C23.5522847,76 24,75.5522847 24,75 L24,65 L27,65 L27,75 C27,77.209139 25.209139,79 23,79 L5,79 C2.790861,79 1,77.209139 1,75 L1,57 C1,54.790861 2.790861,53 5,53 L15,53 Z" id="形状结合" fill="#88CCF5"></path>
+                <path d="M19,15 L61,15 C63.209139,15 65,16.790861 65,19 L65,61 C65,63.209139 63.209139,65 61,65 L19,65 C16.790861,65 15,63.209139 15,61 L15,19 C15,16.790861 16.790861,15 19,15 Z M20,18 C18.8954305,18 18,18.8954305 18,20 L18,60 C18,61.1045695 18.8954305,62 20,62 L60,62 C61.1045695,62 62,61.1045695 62,60 L62,20 C62,18.8954305 61.1045695,18 60,18 L20,18 Z" id="形状" fill="#116CEB"></path>
+                <rect id="矩形" fill="#EB863C" x="32" y="31" width="16" height="16" rx="4"></rect>
+                <rect id="矩形备份-5" fill="url(#linearGradient-1)" transform="translate(70.500000, 40.000000) scale(1, -1) translate(-70.500000, -40.000000) " x="69" y="27" width="3" height="26"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

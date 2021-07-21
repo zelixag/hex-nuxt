@@ -1,0 +1,48 @@
+请看以下对接的代码，AF300的代码有两种方式，
+第一种：如果有注册/交易完成的独立页面的话，把这串代码放到相关文件里，并且要把值写进去，就能够传到AF300当中用作计算。
+第二种：没有注册/交易完成的独立页面，就需要通过后台事件去触发以下JS，并且同时把值写进去。
+
+//放在官网页面模板的<footer></footer>中
+
+<script type="text/javascript" id="pap_x2s6df8d" src="http://app.giraffeclick.com/scripts/g5gmxankjve"></script>
+<script type="text/javascript">
+PostAffTracker.setAccountId('default1');
+var CampaignID='0e977806';
+try {
+PostAffTracker.track();
+} catch (err) { }
+</script>
+
+//放在signup成功页面中
+
+<script type="text/javascript" id="pap_x2s6df8d" src="http://app.giraffeclick.com/scripts/g5gmxankjve"></script>
+<script type="text/javascript">
+
+PostAffTracker.setAccountId('default1');
+var sale = PostAffTracker.createSale();
+sale.setTotalCost('0');
+sale.setOrderID('ORD_signup');
+sale.setCampaignID('0e977806');
+sale.setProductID('ilexexchange');
+sale.setData1('用户唯一的id'); //这个id被带入到AF300后，就可以知道哪个AF介绍了谁，所以需要唯一不变的id，比如系统生成的userid
+sale.setData3('邮箱'); //这个是作为参考用的，需要把用户的填写邮箱传进来
+PostAffTracker.register();
+
+</script>
+
+//放在虚拟货币交易成功页面中
+
+<script type="text/javascript" id="pap_x2s6df8d" src="http://affiliate.giraffeclick.com/scripts/g5gmxankjve"></script>
+<script type="text/javascript">
+
+PostAffTracker.setAccountId('default1');
+var action = PostAffTracker.createAction('transaction_done');
+action.setTotalCost('美金手续费'); //这个值等同于data5，但是必须以美金汇率写入，需要在zeta那里提前根据交易货币计算好
+action.setOrderID('货币对'); //用户交易的货币对
+action.setProductID('ilexexchange');
+action.setData1('用户唯一id'); //这个id被带入到AF300后，就可以知道commission该算给谁
+action.setData2('手续费货币'); //产生手续费的货币，比如用户交易了一笔后产生了BTC0.01手续费，这里就写BTC
+action.setData5('手续费'); //比如用户交易了一笔后产生了BTC0.01手续费，这里就写0.01
+
+PostAffTracker.register();
+</script>

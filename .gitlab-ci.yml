@@ -1,0 +1,15 @@
+stages:
+  - deploy
+deploy_job:
+  type: deploy
+  script:
+    - cd /data/UI 
+    - git fetch --all 
+    - git reset --hard origin/master 
+    - git pull 
+    - npm run build 
+    - sudo supervisorctl restart webui
+  tags:
+    - v1
+  only:
+    - master
