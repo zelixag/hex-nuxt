@@ -1,15 +1,15 @@
-let auth = 'https://auth.XXXXXX.com'
-let api = 'https://api.XXXXXX.com'
+let auth = 'https://auth.coinstake.one'
+let api = 'https://auth.coinstake.one'
 
 let testauth = 'http://test-auth.elitex.io'
 let testapi = 'http://test-api.elitex.io'
 
 const initproxy = false
 //
-// const initauth = auth
-// const initapi = api
-const initauth = testauth
-const initapi = testapi
+const initauth = auth
+const initapi = api
+// const initauth = testauth
+// const initapi = testapi
 
 let obj = {
   /*

@@ -2,8 +2,8 @@
 import pako from 'pako'
 import PubSub from 'pubsub-js'
 
-const _prohost = 'https://push.elitex.com/hexhub'
-const _devhost = 'http://test-push.elitex.io/hexhub'
+const _prohost = 'https://push.coinstake.one'
+const _devhost = 'https://push.coinstake.one'
 // const _host = _prohost
 const _host = _devhost
 
