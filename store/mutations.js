@@ -4,7 +4,7 @@ import * as Cookie from 'js-cookie'
 /*server set*/
 export function set_server_token(state, token) {
   state.hex_token.value = token
-  state.hex_token.value[state.hex_timestamp.type] = new Date((new Date()).getTime() + 110 * 60 * 1000)
+  // state.hex_token.value[state.hex_timestamp.type] = new Date((new Date()).getTime() + 110 * 60 * 1000)
 }
 
 export function set_server_uid(state, params) {

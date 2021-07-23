@@ -47,6 +47,18 @@ Vue.mixin({
         return assets
       }
     },
+    $contract_symble: function() {
+      var symble = this.$store.state.hex_local_contract_symble || 'eth_yx'
+      return symble
+    },
+    $margin_symble: function() {
+      var symble = this.$store.state.hex_local_margin_symble || 'btc_usdt'
+      return symble
+    },
+    $deal_symble: function() {
+      var symble = this.$store.state.hex_local_deal_symble || 'btc_usdt'
+      return symble
+    },
     $userinfo: function () {
       const info = this.$store.state.hex_server_user_info.value
       const token = this.$store.state.hex_token.value.access_token

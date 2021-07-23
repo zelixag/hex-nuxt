@@ -8,17 +8,16 @@ export default function ({app, store, $axios, redirect}) {
 
   $axios.onRequest(config => {
     if (config.url == '/connect/token') {
-      if (!init.proxy) {
-        config.url = init.auth + config.url
-      }
-      config.data = qs.stringify(config.data)
-      return config
+      // if (!init.proxy) {
+      //   config.url = init.auth + config.url
+      // }
+      // config.data = qs.stringify(config.data)
     }
 
     async function _g() {
-      if (!init.proxy) {
-        config.url = init.api + config.url
-      }
+      // if (!init.proxy) {
+      //   config.url = init.api + config.url
+      // }
 
       const [tokens, baseInfo] = await Promise.all([AxiosConfig.getToken(store), AxiosConfig.getBaseInfo(store)]);
 
@@ -27,9 +26,9 @@ export default function ({app, store, $axios, redirect}) {
       } else {
         config.data = baseInfo
       }
-      //console.log('request:' + config.url, config.data)
+      console.log('request:' + config.url, config.data)
 
-      //console.log('requestJSON:' + config.url, JSON.stringify(config.data))
+      console.log('requestJSON:' + config.url, JSON.stringify(config.data))
 
       if (config.data) {
         const strData = JSON.stringify(config.data)
@@ -67,7 +66,7 @@ export default function ({app, store, $axios, redirect}) {
         }
       }
       _data.data = newData
-      //console.log('response:' + response.config.url, _data)
+      console.log('response:' + response.config.url, _data)
       return _data
     }
 

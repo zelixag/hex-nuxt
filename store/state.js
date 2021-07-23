@@ -26,7 +26,7 @@ export default () => ({
   hex_token_state: false,
   hex_token: {
     type: 'HEX_TOKEN',
-    value: ''
+    value: {}
   },
   /*用户信息*/
   hex_user_info: {

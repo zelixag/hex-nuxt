@@ -46,6 +46,7 @@
         _self.state.signin = true;
         _sign.password = crypto.md5String(_sign.password);
         _self.$store.dispatch('user_user_signin_verify', _sign).then(({data}) => {
+          console.log('登录', data)
           _self.verifyModel = data;
           if (!data) {
             throw data;

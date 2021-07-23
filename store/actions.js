@@ -24,7 +24,7 @@ export default {
 
       /*获取token*/
       let res = hex_token
-      let needget = false
+      let needget = false   
       if (res && res.access_token) {
         /*是否过期*/
         if (new Date(res.HEX_TIMESTAMP).getTime() < new Date().getTime()) {
@@ -38,6 +38,7 @@ export default {
         res = await dispatch('token', state.tokenParams)
       }
       if (res && res.access_token) {
+        console.log(res)
         /*存储token*/
         commit('set_server_token', res)
 

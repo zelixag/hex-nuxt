@@ -8,7 +8,6 @@ import {
 
 import NuxtError from '../layouts/error.vue'
 import NuxtLoading from '~/components/public/loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
 
@@ -20,7 +19,7 @@ import _5de485ab from '../layouts/m-default.vue'
 const layouts = { "_default": _6f6c098b,"_default2": _7e152807,"_full-default": _20e727f9,"_m-default": _5de485ab }
 
 export default {
-  head: {"meta":[{"charset":"utf-8"},{"http-equiv":"X-UA-Compatible","content":"IE=Edge,chrome=1"},{"name":"format-detection","content":"telephone=no"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"script":[{"src":"https:\u002F\u002Fssl.captcha.qq.com\u002FTCaptcha.js","defer":true},{"src":"https:\u002F\u002Fpv.sohu.com\u002Fcityjson?ie=utf-8","defer":true}],"style":[]},
+  head: {"meta":[{"charset":"utf-8"},{"http-equiv":"X-UA-Compatible","content":"IE=Edge,chrome=1"},{"name":"format-detection","content":"telephone=no"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"script":[{"src":"https:\u002F\u002Fwww.googletagmanager.com\u002Fgtag\u002Fjs?id=UA-127405416-1","defer":true},{"src":"https:\u002F\u002Fssl.captcha.qq.com\u002FTCaptcha.js","defer":true},{"src":"https:\u002F\u002Fpv.sohu.com\u002Fcityjson?ie=utf-8","defer":true},{"id":"pap_x2s6df8d","src":"\u002F\u002Fapp.giraffeclick.com\u002Fscripts\u002Fg5gmxankjve","defer":true}],"style":[]},
 
   render (h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
@@ -65,7 +64,7 @@ export default {
       }
     }, [
       loadingEl,
-      h(NuxtBuildIndicator),
+
       transitionEl
     ])
   },
@@ -175,10 +174,6 @@ export default {
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }

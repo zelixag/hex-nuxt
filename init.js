@@ -1,10 +1,10 @@
 let auth = 'https://auth.coinstake.one'
-let api = 'https://auth.coinstake.one'
+let api = 'https://api.coinstake.one'
 
 let testauth = 'http://test-auth.elitex.io'
 let testapi = 'http://test-api.elitex.io'
 
-const initproxy = false
+const initproxy = true
 //
 const initauth = auth
 const initapi = api
@@ -35,10 +35,10 @@ let obj = {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ],
     script: [
-      // {src: "https://www.googletagmanager.com/gtag/js?id=UA-127405416-1", defer: true},
+      {src: "https://www.googletagmanager.com/gtag/js?id=UA-127405416-1", defer: true},
       {src: 'https://ssl.captcha.qq.com/TCaptcha.js', defer: true},
       {src: 'https://pv.sohu.com/cityjson?ie=utf-8', defer: true},
-      // {id: "pap_x2s6df8d", src: '//app.giraffeclick.com/scripts/g5gmxankjve', defer: true}
+      {id: "pap_x2s6df8d", src: '//app.giraffeclick.com/scripts/g5gmxankjve', defer: true}
     ]
   },
   vender:[
@@ -89,16 +89,18 @@ let obj = {
     {src: '~/plugins/global', ssr: false},
     {src: '~/plugins/main'},
     {src: '~/plugins/i18n'},
-    {src: '~/plugins/axios'},
+    {src: '~/plugins/axios', ssr: true},
     {src: '~/plugins/captcha', ssr: false},
     {src: '~/plugins/notification', ssr: false},
     {src: '~/plugins/elementui', ssr: true}
   ],
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   axios: {
-    proxy: initproxy
+    proxy: initproxy,
+    https: true
   },
   proxy: {
     '/connect': {
@@ -111,7 +113,7 @@ let obj = {
       target: initapi
     },
     '/c2capi': {
-      target: initapi
+      target: initapi,
     },
     '/transactionapi': {
       target: initapi
